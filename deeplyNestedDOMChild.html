@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head><title>Codility test</title></head><body>
+
+<ul>
+  <li>Item:
+     <ol>
+       <li>Point:
+         <div>
+           <ul>
+             <li>elem1</li>
+           </ul>
+         </div>
+       </li>
+     </ol>
+  </li>
+  <li>elem2</li>
+</ul>
+<ul>
+  <li>simple list1</li>
+</ul>
+<ul>
+</ul>
+</body>
+<script>
+  function solution() {
+    let elements = $('ul, ol'); 
+    let depth = elements.map((i,element)=> $(element).find('ul, ol').length);
+    return  Math.max.apply(0, depth) + 1;
+  }
+  var result = solution();
+  console.log(result);
+</script>
+</html>
